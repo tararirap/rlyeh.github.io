@@ -14,6 +14,7 @@
 html,body { background:var(--void); color:var(--parchment); }
 body { font-family:"Noto Serif KR",serif; overflow-x:hidden; cursor:crosshair; }
 #grain,#vignette,#embers { pointer-events:none; position:fixed; inset:0; }
+#grain,#vignette,#embers { will-change:transform; }
 #grain { opacity:.14; mix-blend-mode:overlay; z-index:42; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation:grainShift .18s steps(2) infinite; }
 #vignette { background:radial-gradient(ellipse at center,transparent 42%,#000 100%); z-index:41; }
 #embers { z-index:39; }
@@ -230,21 +231,6 @@ header.hero { scroll-margin-top:0; }
     <p>한때 그들은 가축과 식량, 무기를 노리고 르뤼에를 주기적으로 습격했다. 허나 지금은 이 지옥에서 훔칠 가치조차 없다 여겨 관심을 끊었다. 다만 산맥으로 넘어오는 자가 그들의 영역을 밟는다면, 외부인을 경계하며 이빨을 드러낼 것이다. 비겁과 거짓을 경멸하니, 목적을 정면으로 밝히는 강자에게는—적이라도—최소한의 경의를 남긴다. 허나 명심하거라. 그들의 맹세를 어기면 반드시 값을 받아낼 것이고, 그 값은 언제나 피일 테니.</p>
   </div>
 
-  <h3>지역</h3>
-  <div class="prose" style="margin-bottom:14px;"><p>지도의 점을 눌렀다면 그곳에 남겨 둔 주석을 읽었겠지. 여기에는 그 땅의 성질과 위험을 한데 모아 두었다. 같은 흙을 밟더라도 낮과 밤, 그리고 붉은 달이 뜨는 날은 전혀 다른 얼굴을 드러낸다. 평소에는 익숙해 보이던 거리도 붉은 달 아래에서는 피를 부르는 제단이 되고, 아무 의미 없던 골목 하나가 이름 모를 의식으로 향하는 입구가 되기도 하지. 르뤼에에서는 익숙하다는 이유만으로 안전하다고 생각하지 마라.</p></div>
-  <div class="grid-2">
-    <article class="card"><div class="tag">성채</div><h4>성채</h4><p>내성과 외성, 교회와 시장과 농장까지 모두 무너진 채 너를 맞는다. 남은 것이라곤 아리엘이 붙잡은 장부와 한스가 지키는 빈 병영, 그리고 아직 완전히 무너지지 않은 석벽뿐이다. 오염된 위병은 죽은 자처럼 옛 근무를 반복하고, 사교도와 뱀파이어, 황색 로브의 악사들이 무너진 틈과 그늘을 차지하고 있다. 성이라 부르기에는 너무 많은 것이 썩었지. 피난처를 찾으러 왔다면 잘못 찾아왔다. 이곳은 지붕을 얹은 제단에 더 가깝다.</p></article>
-    <article class="card"><div class="tag">농지</div><h4>농지</h4><p>검게 썩어 버린 밭고랑을 고블린과 좀비와 산적이 나누어 가진다. 남은 농민들은 노예상의 눈 아래서 살아 있고, 오염된 위병은 예전 순찰길을 따라 움직인다. 밭이 살아나기 전에는 곳간도 풍족해질 수 없다. 배고픔은 조용하지만, 그 결과는 언제나 시끄럽게 돌아오지.</p></article>
-    <article class="card"><div class="tag">검은 숲</div><h4>검은 숲</h4><p>로고그의 포자가 숲 전체에 스며들어 있다. 늑대와 곰, 오크와 트롤과 오우거, 늑대인간과 트렌트, 그리폰과 코카트리스가 뒤틀린 뿌리 사이를 돌아다닌다. 포자에 잠식당한 생명은 몸에서 꽃과 수피를 피워 올리고, 그 뒤에는 다시 원래의 모습을 기대할 수 없게 된다. 가장 깊은 곳에는 검은 거목이 뿌리를 내리고 있다. 그 뿌리를 그대로 둔 채 숲만 깨끗하게 만들겠다는 생각은 하지 마라. 이곳의 타락은 가지가 아니라 뿌리에서 자라니까.</p></article>
-    <article class="card"><div class="tag">빛을 삼키는 침강지</div><h4>빛을 삼키는 침강지</h4><p>바다와 이어진 수로를 따라 딥 원의 흔적이 올라오는 남쪽의 진흙 땅이다. 익사체와 리자드맨, 늪지 아귀와 개구리 인간이 물과 진흙 아래에서 숨을 죽이고 있으며, 우보 사틀라의 찌꺼기도 이 땅 깊숙한 곳에 고여 있다. 외곽에는 야고의 동굴이 있다. 한번 발을 빠뜨리면 빠져나오는 데 힘을 쓰는 동안 진흙이 무릎을 붙잡고, 무릎을 빼내는 사이 다른 것이 발목을 붙든다. 이곳에서는 움직이는 것 자체가 위험이다.</p></article>
-    <article class="card"><div class="tag">인스머스 해안</div><h4>인스머스 해안</h4><p>비린내와 기괴한 찬양이 같은 파도에 섞여 밀려오는 서쪽 해안이다. 익사체와 딥 원, 나가와 바다 마녀, 다곤의 사자가 물가를 배회한다. 멀리서 레비아탄의 몸이 떠오르는 날이면 어촌 하나쯤은 지도에서 사라질 수도 있지. 해협의 암초는 지도보다 정직하다. 지도는 틀릴 수 있지만 암초는 틀리지 않는다. 부딪히는 순간 배부터 부수니까.</p></article>
-    <article class="card"><div class="tag">카다스 산맥</div><h4>카다스 산맥</h4><p>이타콰의 입김이 눈보라가 되어 길을 지운다. 설인과 냉기의 사냥개, 베히모스와 드래곤이 산을 돌아다니며, 코끼리 인간과 그리폰은 능선을 두고 영역을 다툰다. 이곳에서 설인이나 사냥개를 베는 것은 단순한 사냥이 아니다. 네가 무엇을 죽였는지, 누가 그것을 기억할지를 생각해야 한다. 겨울은 의외로 기억력이 좋으니까.</p></article>
-    <article class="card"><div class="tag">르뤼에 납골당</div><h4>르뤼에 납골당</h4><p>좀비와 스켈레톤, 구울과 망령과 밴시가 죽은 자의 땅을 떠돈다. 시체 골렘과 듀라한, 뱀파이어와 죽음의 기사, 리치와 본 드래곤까지 아래로 내려갈수록 죽음의 종류가 늘어난다. 더 깊은 곳에서는 은가면을 쓴 어둠이 영역을 지킨다. 시체를 모독하지 마라. 규율을 지키면 지나가는 것을 묵인할 수도 있다. 다만 그것을 환영이라 착각하지는 말거라. 죽은 자의 침묵은 예의가 아니라 유예일 뿐이니까.</p></article>
-    <article class="card"><div class="tag">울부짖는 동굴</div><h4>울부짖는 동굴</h4><p>거미와 동굴 달팽이와 전갈, 리자드맨과 바실리스크, 베히모스와 뇌를 먹는 자가 어둠을 나누어 가진다. 차원 깊숙한 곳에는 아틀락 나챠의 흔적과 예쿱의 영역이 이어져 있다. 거미줄을 끊으면 어미가 찾아오고, 예쿱을 너무 많이 죽이면 그들의 신이 너를 기억할 수도 있다. 그리고 가장 깊은 곳에는 잠든 두꺼비가 있다. 세상에는 굳이 깨워서 확인하지 않아도 되는 존재가 있는 법이다.</p></article>
-    <article class="card"><div class="tag">던전</div><h4>던전</h4><p>성 아래에서 고대 신전까지 이어지는 거대한 지하 미궁이다. 사교도와 구울, 스타 스폰과 심연을 엿본 자, 뱀파이어와 리치와 본 드래곤이 그 안을 돌아다닌다. 길은 뒤틀리고 공간은 기억을 배반하며, 내려갈수록 인간이 만든 건축물이라는 생각이 희미해진다. 내려가는 발이 돌아오는 발보다 가벼운 이유를 궁금해하지 마라. 돌아올 발이 남아 있지 않을 수도 있으니까.</p></article>
-    <article class="card"><div class="tag">고대 신전</div><h4>고대 신전</h4><p>다섯 석판이 결계의 열쇠다. 검붉은 심장이 뛰는 동안 외신은 차원의 틈을 통해 끊임없이 밀려든다. 스타 스폰이 길을 지키고, 불꽃의 전령과 황의를 입은 악사와 심해의 사자가 같은 공기 속을 배회한다. 네가 이 땅에 온 이유는 결국 여기까지 이어진다. 하지만 목적지가 있다는 것과 그곳에서 살아 돌아올 수 있다는 것은 전혀 다른 이야기다.</p></article>
-  </div>
-
   <h3>경제</h3>
   <div class="prose">
     <p>이 땅의 장부는 G로만 적힌다. 동화 한 닢이 10G, 은화는 100G, 금화는 1000G다. 네가 상속받은 금고는, 평범한 운명이라면 오천이다. 말 한 필이거나, 무너진 성벽의 한 단계거나, 창관 며칠이다. 더 가혹한 운명을 고르면 금고는 더 얇다. 역병과 봉쇄가 겹치면 아래 시세는 더 오른다. 르뤼에는 언제나 그 상한에 가깝다.</p>
@@ -427,11 +413,11 @@ header.hero { scroll-margin-top:0; }
   <h4 style="color:#e8c98a;margin:8px 0;">세금 징수액</h4>
   <table class="sys">
     <tr><th>개발도</th><th>👨 -100~-1</th><th>👨 0~49</th><th>👨 50~100</th></tr>
-    <tr><td>Lv.1</td><td>50G</td><td>100G</td><td>200G</td></tr>
-    <tr><td>Lv.2</td><td>100G</td><td>250G</td><td>400G</td></tr>
-    <tr><td>Lv.3</td><td>200G</td><td>500G</td><td>800G</td></tr>
-    <tr><td>Lv.4</td><td>400G</td><td>900G</td><td>1400G</td></tr>
-    <tr><td>Lv.5</td><td>700G</td><td>1500G</td><td>2200G</td></tr>
+    <tr><td>Lv.1</td><td>300G</td><td>450G</td><td>600G</td></tr>
+    <tr><td>Lv.2</td><td>600G</td><td>900G</td><td>1200G</td></tr>
+    <tr><td>Lv.3</td><td>900G</td><td>1350G</td><td>1800G</td></tr>
+    <tr><td>Lv.4</td><td>1200G</td><td>1800G</td><td>2400G</td></tr>
+    <tr><td>Lv.5</td><td>1500G</td><td>2350G</td><td>3000G</td></tr>
   </table>
   <p class="prose">💸는 5에서 시작해 입력마다 1씩 줄어든다. 0이 되면 징수 → 👨-10 → 유지비 → 다시 5. 시장이 정상이면 표의 오른쪽 칸을 쓴다.</p>
   <h4 style="color:#e8c98a;margin:8px 0;">침공 병사 손실</h4>
@@ -445,7 +431,7 @@ header.hero { scroll-margin-top:0; }
   </table>
 
   <h3>랭크 시스템</h3>
-  <div class="prose"><p>랭크는 힘의 서열이다. 격차는 잔재주로 메우지 못한다. 유일한 예외는 주사위가 자연 20을 띄울 때뿐.</p></div>
+  <div class="prose"><p>랭크는 세계 안의 입에서 나오지 않는다. 힘의 서열일 뿐이다. 격차는 잔재주로 메우지 못한다. 유일한 예외는 주사위가 자연 20을 띄울 때뿐.</p></div>
   <table class="sys">
     <tr><th>랭크</th><th>의미</th><th>스탯 보정</th><th>HP/MP</th><th>피해</th><th>다음까지 XP</th></tr>
     <tr><td>F</td><td>약골</td><td>-3</td><td>50</td><td>10</td><td>50</td></tr>
@@ -465,7 +451,7 @@ header.hero { scroll-margin-top:0; }
     <tr><td>상대 1 / 2 / 3</td><td>-3 / -6 / -9</td></tr>
     <tr><td>상대 4+</td><td>판정 불가. 자연 20만 유효타</td></tr>
   </table>
-  <p class="prose">너의 HP는 💪, MP는 ✨. NPC는 주 랭크가 HP·MP. 마법 적성이 없으면 MP는 0. 명성 F면 아리엘을 제외하고 모두가 영지를 떠난다.</p>
+  <p class="prose">U의 HP는 💪, MP는 ✨. NPC는 주 랭크가 HP·MP. 마법 적성이 없으면 MP는 0. 명성 F면 아리엘을 제외하고 모두가 영지를 떠난다.</p>
 
   <h3>전투 시스템</h3>
   <div class="prose">
@@ -485,21 +471,19 @@ header.hero { scroll-margin-top:0; }
   </table>
   <h4 style="color:#e8c98a;margin:8px 0;">위계</h4>
   <table class="sys">
-    <tr><th>위계</th><th>랭크</th><th>범위</th><th>규모</th><th>분류</th></tr>
-    <tr><td>1</td><td>F</td><td>접촉~2m</td><td>경미한 타박·불씨</td><td>기초 발현</td></tr>
-    <tr><td>2</td><td>E</td><td>단일 5~10m</td><td>가죽 파손, 소형 짐승</td><td>초급 전술</td></tr>
-    <tr><td>3</td><td>D</td><td>단일~3인</td><td>경장 관통, 대인 치명</td><td>정규 대인</td></tr>
-    <tr><td>4</td><td>C</td><td>반경 5~10m</td><td>분대·석벽</td><td>중급 전술</td></tr>
-    <tr><td>5</td><td>B</td><td>반경 20m</td><td>소대 20~30, 중갑</td><td>상급 전술</td></tr>
-    <tr><td>6</td><td>B</td><td>반경 50m</td><td>중대·성벽</td><td>상급 결전</td></tr>
-    <tr><td>7</td><td>A</td><td>수백 m</td><td>대대·천재지변</td><td>전략 대마법</td></tr>
-    <tr><td>8</td><td>A</td><td>수 km</td><td>산봉우리·기후 영구 변형</td><td>준재앙</td></tr>
-    <tr><td>9</td><td>S</td><td>수십 km²</td><td>영지 절멸, 법칙 왜곡</td><td>초위계</td></tr>
-    <tr><td>10</td><td>EX</td><td>대륙~차원</td><td>창세·개념 소멸</td><td>신화</td></tr>
+    <tr><th>위계</th><th>랭크</th><th>범위</th><th>규모</th><th>분류</th><th>주문 예시</th></tr>
+    <tr><td>1</td><td>F</td><td>접촉~2m</td><td>경미한 타박·불씨</td><td>기초 발현</td><td>불씨, 손끝 광원, 미풍, 마나 감지</td></tr>
+    <tr><td>2</td><td>E</td><td>단일 5~10m</td><td>가죽 파손, 소형 짐승</td><td>초급 전술</td><td>화염 화살, 찰과 치료, 투석, 냉기, 얕은 은신</td></tr>
+    <tr><td>3</td><td>D</td><td>단일~3인</td><td>경장 관통, 대인 치명</td><td>정규 대인</td><td>화염구, 금속 송곳, 바람 칼날, 부패 저주, 마력탄</td></tr>
+    <tr><td>4</td><td>C</td><td>반경 5~10m</td><td>분대·석벽</td><td>중급 전술</td><td>화염 폭발, 대지 융기, 빙결 지대, 응급 치료, 저위 사령</td></tr>
+    <tr><td>5</td><td>B</td><td>반경 20m</td><td>소대 20~30, 중갑</td><td>상급 전술</td><td>연쇄 폭염, 성역 결계, 금속 폭풍, 공간 절단, 생명력 강탈</td></tr>
+    <tr><td>6</td><td>B</td><td>반경 50m</td><td>중대·성벽</td><td>상급 결전</td><td>지옥불 폭풍, 대규모 사령, 절대 빙벽, 광역 충격파, 공간 왜곡</td></tr>
+    <tr><td>7</td><td>A</td><td>수백 m</td><td>대대·천재지변</td><td>전략 대마법</td><td>유성, 혹한 폭풍, 역병 강림, 고위 차원문, 광역 부활</td></tr>
+    <tr><td>8</td><td>A</td><td>수 km</td><td>산봉우리·기후 영구 변형</td><td>준재앙</td><td>마그마, 절대영도, 지맥 오염, 대기 폭풍, 차원 단층</td></tr>
+    <tr><td>9</td><td>S</td><td>수십 km²</td><td>영지 절멸, 법칙 왜곡</td><td>초위계</td><td>정화의 홍수, 대륙급 언데드, 시공간 동결, 불로불사</td></tr>
+    <tr><td>10</td><td>EX</td><td>대륙~차원</td><td>창세·개념 소멸</td><td>신화</td><td>외신 강림, 대륙 광기, 존재 소멸</td></tr>
   </table>
-  <div class="prose">
-    <p>1위계: 불씨, 손끝 광원, 미풍, 마나 감지. 2위계: 화염 화살, 찰과 치료, 투석, 냉기, 얕은 은신. 3위계: 화염구, 금속 송곳, 바람 칼날, 부패 저주, 마력탄. 4위계: 화염 폭발, 대지 융기, 빙결 지대, 응급 치료, 저위 사령. 5위계: 연쇄 폭염, 성역 결계, 금속 폭풍, 공간 절단, 생명력 강탈. 6위계: 지옥불 폭풍, 대규모 사령, 절대 빙벽, 광역 충격파, 공간 왜곡. 7위계: 유성, 혹한 폭풍, 역병 강림, 고위 차원문, 광역 부활. 8위계: 마그마, 절대영도, 지맥 오염, 대기 폭풍, 차원 단층. 9위계: 정화의 홍수, 대륙급 언데드, 시공간 동결, 불로불사. 10위계: 외신 강림, 대륙 광기, 존재 소멸. 필멸자가 닿을 수 있는 끝은 9위계다.</p>
-  </div>
+  <p class="prose">필멸자가 닿을 수 있는 끝은 9위계다.</p>
   <h4 style="color:#e8c98a;margin:8px 0;">속성</h4>
   <table class="sys">
     <tr><th>속성</th><th>영역</th><th>전술</th></tr>
@@ -515,11 +499,11 @@ header.hero { scroll-margin-top:0; }
   </table>
 
   <h3>이미지 출력 규칙</h3>
-  <div class="prose"><p>초상은 <span class="kbd">https://b.tararirap.org/{CODE}/{NUM}.webp</span> 한 줄로만 부른다. 장소·몬스터·외신은 CODE가 항상 ZZZ다. 히로인과 NPC의 CODE는 알파벳이다.</p></div>
+  <div class="prose"><p>초상은 <span class="kbd">https://b.tararirap.org/{CODE}/{NUM}.webp</span> 한 줄로만 부른다. 장소·몬스터·외신은 CODE가 항상 ZZZ다. 히로인과 잔존자의 CODE는 알파벳이다.</p></div>
   <table class="sys">
     <tr><th>구분</th><th>CODE</th><th>NUM</th><th>비고</th></tr>
     <tr><td>히로인 초상</td><td>A–N, Z, T</td><td>1–500</td><td>대사 직전 1회. 응답당 최대 5장. NSFW 장면은 해당 NSFW 번호 우선.</td></tr>
-    <tr><td>NPC 초상</td><td>O–S</td><td>1–44, 61–80</td><td>45–60은 의도적 생략.</td></tr>
+    <tr><td>잔존자 초상</td><td>O–S</td><td>1–44, 61–80</td><td>45–60은 의도적 생략.</td></tr>
     <tr><td>장소·환경</td><td>ZZZ</td><td>901–1000</td><td>매 응답 상단에 현재 위치 1장. 침공·외신·오염 시 가능하면 (홍월) 번호.</td></tr>
     <tr><td>몬스터</td><td>ZZZ</td><td>701–794</td><td>몬스터 행동 전 상단 1장.</td></tr>
     <tr><td>외신</td><td>ZZZ</td><td>801–824</td><td>현신·조우 시 1장.</td></tr>
@@ -1194,13 +1178,6 @@ function tick() {
 addEventListener("resize", () => { resize(); spawn(); });
 resize(); spawn(); tick();
 
-let glitching = false;
-addEventListener("scroll", () => {
-  if (glitching || Math.random() > .08) return;
-  glitching = true;
-  document.body.style.filter = "hue-rotate(-12deg) contrast(1.15)";
-  setTimeout(() => { document.body.style.filter = ""; glitching = false; }, 90);
-});
 
 </script>
 </body>
